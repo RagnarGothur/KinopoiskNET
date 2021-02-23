@@ -1,15 +1,15 @@
 ﻿using KinopoiskNET.Core.DTO;
 
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace KinopoiskNET.Core
 {
     public interface IKinopoiskClient
     {
-        public TvSeriesInfo GetTvSeries(string id);
-        public MovieInfo GetMovie(string id);
+        public Task<MovieInfo> GetMovieByIdAsync(string id);
+        public Task<MovieInfoList> GetMoviesListAsync(int page = 1);
 
-        public List<TvSeriesInfo> GetTvSeries(int page = 1);
-        public List<MovieInfo> GetMovies(int page = 1);
+        public Task<TvSeriesInfo> GetTvSeriesByIdAsync(string id);
+        public Task<TvSeriesInfoList> GetTvSeriesListAsync(int page = 1);
     }
 }

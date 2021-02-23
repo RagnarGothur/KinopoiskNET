@@ -383,6 +383,7 @@ obj/
 
 # secrets
 secrets.json
+Secrets.cs
 
 # temp files
 .tmp/
